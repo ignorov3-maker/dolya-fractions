@@ -44,6 +44,7 @@
     $('start').textContent = 'Начать заново ↗';
     $('settings-note').textContent = 'Тему и сложность можно поменять после четырёх заданий.';
     showTask();
+    if (window.innerWidth <= 720) $('exercise').scrollIntoView({ block: 'start' });
   }
   function resultView() {
     $('task-view').hidden = true;
