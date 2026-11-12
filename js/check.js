@@ -52,5 +52,5 @@
         return { ok: true };
     }
   }
-  root.VEKTOR_CHECK = { parse, check, gcd };
+  root.DOLYA_CHECK = { parse, check, gcd };
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -13,7 +13,7 @@
       get finished() { return index === tasks.length; },
       submit(raw) {
         if (this.finished || answers[index]) return null;
-        const result = root.VEKTOR_CHECK.check(raw, tasks[index]);
+        const result = root.DOLYA_CHECK.check(raw, tasks[index]);
         if (!result.empty && !result.unreadable) answers.push({ ...result, input: raw });
         return result;
       },
@@ -24,5 +24,5 @@
       },
     };
   }
-  root.VEKTOR_SESSION = { createSession };
+  root.DOLYA_SESSION = { createSession };
 })(typeof window !== 'undefined' ? window : globalThis);

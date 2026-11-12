@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   const $ = id => document.getElementById(id);
-  const topics = window.VEKTOR_FRACTIONS.topics;
+  const topics = window.DOLYA_FRACTIONS.topics;
   let session;
   for (const topic of topics) $('topic').add(new Option(topic.short, topic.id));
   $('topic').value = 'add-diff';
@@ -35,7 +35,7 @@
     $('answer').focus({ preventScroll: true });
   }
   function start() {
-    session = window.VEKTOR_SESSION.createSession(topics.find(t => t.id === $('topic').value), Number($('level').value));
+    session = window.DOLYA_SESSION.createSession(topics.find(t => t.id === $('topic').value), Number($('level').value));
     $('welcome').hidden = true;
     $('result').hidden = true;
     $('task-view').hidden = false;

@@ -4,7 +4,7 @@ global.window = globalThis;
 require('../js/check.js');
 require('../js/topics.js');
 require('../js/session.js');
-const { check, parse } = VEKTOR_CHECK;
+const { check, parse } = DOLYA_CHECK;
 const task = (answer, accept = 'equivalent') => ({ answer, accept });
 
 test('равные дроби, целые, знаки и смешанные числа', () => {
@@ -33,12 +33,12 @@ test('пустой ответ, нулевой знаменатель и неве
   }
 });
 test('каждая тема и каждый уровень: генератор выдаёт корректные задачи', () => {
-  assert.equal(VEKTOR_FRACTIONS.topics.length, 9);
+  assert.equal(DOLYA_FRACTIONS.topics.length, 9);
   let state = 12345;
   const oldRandom = Math.random;
   Math.random = () => { state = (Math.imul(1664525, state) + 1013904223) >>> 0; return state / 4294967296; };
   try {
-    for (const topic of VEKTOR_FRACTIONS.topics) for (let level = 1; level <= 3; level++) for (let n = 0; n < 300; n++) {
+    for (const topic of DOLYA_FRACTIONS.topics) for (let level = 1; level <= 3; level++) for (let n = 0; n < 300; n++) {
       const generated = topic.generate(level);
       assert.equal(check(generated.answer, generated).ok, true, topic.id);
       assert.doesNotMatch([generated.story, generated.question, generated.solution].join(' '), /undefined|NaN|Infinity/);
@@ -48,7 +48,7 @@ test('каждая тема и каждый уровень: генератор �
   } finally { Math.random = oldRandom; }
 });
 test('четыре задания: один ответ на задание, неверный ввод не тратит попытку', () => {
-  const s = VEKTOR_SESSION.createSession(VEKTOR_FRACTIONS.topics[1], 1);
+  const s = DOLYA_SESSION.createSession(DOLYA_FRACTIONS.topics[1], 1);
   assert.equal(s.next(), false);
   assert.equal(s.submit('').empty, true);
   assert.equal(s.submit('1/0').unreadable, true);
