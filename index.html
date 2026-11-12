@@ -16,33 +16,34 @@
 <body>
   <header class="site-header">
     <a class="brand" href="./" aria-label="Вектор мини — главная"><span class="brand-icon" aria-hidden="true">↗</span> вектор<span class="brand-mini">мини</span></a>
-    <span class="header-note">Математика · 5 класс</span>
+    <span class="header-note"><span class="status-dot" aria-hidden="true"></span> Математика · 5 класс</span>
   </header>
   <main>
     <section class="intro">
-      <p class="eyebrow">МАЛЕНЬКАЯ ПРОВЕРКА. БОЛЬШЕ УВЕРЕННОСТИ.</p>
-      <h1>Дроби? <span>Разберёмся.</span></h1>
-      <p class="lead">Четыре задания, твои ответы и честная проверка.<br>Выбери тему — и попробуй свои силы.</p>
+      <div><p class="eyebrow">ПРАКТИКА ПО МАТЕМАТИКЕ</p>
+      <h1>Разберёмся <span>с дробями.</span></h1>
+      <p class="lead">Решай в своём темпе и сразу проверяй ответы.</p></div>
+      <div class="intro-note"><span class="intro-note-icon" aria-hidden="true">✓</span><div><strong>Маленький шаг вперёд</strong><span>4 задания · без таймера</span></div></div>
     </section>
     <div class="workspace">
       <aside class="settings card">
-        <span class="section-label">01 / НАСТРОЙ ПРОВЕРКУ</span>
-        <h2>Что порешаем?</h2>
+        <span class="section-label">ПАРАМЕТРЫ</span>
+        <h2>Новая проверка</h2>
         <label for="topic">Тема</label>
         <select id="topic"></select>
         <label for="level">Сложность</label>
         <select id="level"><option value="1">Начальная</option><option value="2" selected>Средняя</option><option value="3">Повышенная</option></select>
         <button id="start" class="primary">Начать проверку <span aria-hidden="true">↗</span></button>
         <p id="settings-note" class="muted">4 задания · без таймера<br>Зачёт — от 3 верных ответов.</p>
-        <div class="paper-note"><span aria-hidden="true">✎</span><p>Возьми листочек для вычислений.<br>Здесь нужен только ответ.</p></div>
+        <div class="paper-note"><span aria-hidden="true">✎</span><p>Вычисления — на бумаге.<br>Сюда введи только ответ.</p></div>
       </aside>
       <section id="exercise" class="exercise card" aria-label="Проверка ответов по дробям">
-        <div class="task-top"><span class="section-label">02 / ПРОВЕРЬ СЕБЯ</span><span id="task-count" class="pill">Начнём?</span></div>
+        <div class="task-top"><span class="section-label">ПРОВЕРЬ СЕБЯ</span><span id="task-count" class="pill">Всё готово к старту</span></div>
         <div id="progress" class="progress" aria-label="Прогресс проверки"></div>
         <div id="welcome">
           <div class="fraction-art" aria-hidden="true"><span class="art-card"><span class="frac"><span>3</span><span>4</span></span></span><span class="art-equal">=</span><span class="art-pie"></span><span class="art-check">✓</span></div>
-          <h2 id="exercise-title">Всё начинается с одной дроби</h2>
-          <p class="muted">Выбери тему и нажми «Начать проверку».<br>Ответ проверит программа — сразу после ввода.</p>
+          <h2 id="exercise-title">Начнём с одной задачи?</h2>
+          <p class="muted">Выбери тему и сложность, затем начни проверку.<br>После каждого ответа получишь результат и объяснение.</p>
         </div>
         <div id="task-view" hidden>
           <h2 id="topic-title"></h2>
@@ -60,9 +61,9 @@
         <div id="result" hidden tabindex="-1"></div>
       </section>
     </div>
-    <section class="how"><span class="section-label">КАК ЭТО РАБОТАЕТ</span><div><p><b>01</b> Выбери тему</p><p><b>02</b> Реши на бумаге</p><p><b>03</b> Введи и проверь</p></div></section>
+    <section class="how" aria-label="Как пройти проверку"><p><b>1</b> Выбери тему</p><span aria-hidden="true">→</span><p><b>2</b> Реши на бумаге</p><span aria-hidden="true">→</span><p><b>3</b> Проверь ответ</p></section>
   </main>
-  <footer><span>Вектор мини / Дроби</span><span>Учебный проект по информатике · HTML, CSS, JavaScript</span></footer>
+  <footer><span>Вектор мини <span aria-hidden="true">/</span> Дроби</span><span>Ошибаться — часть обучения.</span></footer>
   <noscript><p>Для проверки ответов включи JavaScript в браузере.</p></noscript>
 </body>
 </html>
